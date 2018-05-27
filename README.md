@@ -6,7 +6,7 @@ This plugin provides a database to store, modify and call text identified by so 
 Each language has it's own table with messages, so u can ask via the Build-In API for example
 
 ```
--> get message -> language 'English' -> messageId 'welcomeMsg' -> returns "&eWelcome &c$player &eto my server! \n&6Hope you'll have fun here!
+-> get message -> language 'English' -> messageId 'welcomeMsg' -> returns "&eWelcome &c$player &eto my server! \n&6Hope you'll have fun here!"
 ```
 
 ##MORE TO COME HERE
