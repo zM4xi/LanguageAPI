@@ -14,7 +14,10 @@ Each language has it's own table with messages, so u can ask for messages viathe
 Following a few examples how to start and use the API:
 
 Example database:
-![alt text](https://i.imgur.com/5VstbD9.png "example database")
+
+| messageIdentifier | message                         |
+| testMessageId     | simple test message to display  |
+| otherMessageId    | yet another simple display text |
 
 ```java
 
