@@ -16,6 +16,7 @@ Following a few examples how to start and use the API:
 Example database:
 
 | messageIdentifier | message                         |
+| --- | --- | --- |
 | testMessageId     | simple test message to display  |
 | otherMessageId    | yet another simple display text |
 
