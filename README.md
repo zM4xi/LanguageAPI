@@ -20,4 +20,23 @@ Example database:
 | testMessageId | simple test message to display |
 | otherMessageId | yet another simple display text |
 
+Starting with the basic to use the LanguageAPI simply write following:
+
 ```java
+LanguageAPI languageAPI = new LanguageAPI();
+```
+
+Now we get to the use it:
+
+```java
+        LanguageAPI languageAPI = new LanguageAPI();
+        UUID uuid = null; //Your current users uuid for presentation purpose its null
+        String message = languageAPI.getMessageString(languageAPI.getLanguageOf(uuid), "testMesssageId");
+
+        System.out.println(message);
+```
+
+This would output:
+> simple test message to display
+
+
