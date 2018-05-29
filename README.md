@@ -4,7 +4,7 @@ This plugin provides a database to store, modify and call text identified by so 
 
 The plugin is written in a way so u can use it for BungeeCord or Spigot above 1.8.X either way its mostly based on runtime independent code. The only thing thats based on the runtime is the command and the listener to register/update the users.
 
-The plugins uses a concept where it cahces the database on every startup, so the traffic between server and database can be at minimum.
+The plugin uses a concept where it cahces the database on every startup, so the traffic between server and database can be at minimum.
 Changes still will be updated to the database but the normal request of an message or a users language is the cached data!
 
 Each language has it's own table with messages, so u can ask for messages viathe Build-In API for example
