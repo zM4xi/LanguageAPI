@@ -65,7 +65,7 @@ Now to get all messages of a given language:
  Now to change a message do as follows:
  
  ```java
-         LanguageAPI languageAPI = new LanguageAPI();
+        LanguageAPI languageAPI = new LanguageAPI();
         Language language = languageAPI.getLanguageManager().getByCode("EN");
         Message message = languageAPI.getMessage(language, "otherMessageId");
 
@@ -79,7 +79,7 @@ Now to get all messages of a given language:
  Now some statistic work:
  
  ```java
-         LanguageAPI languageAPI = new LanguageAPI();
+        LanguageAPI languageAPI = new LanguageAPI();
         Language language = languageAPI.getLanguageManager().getByCode("EN");
         LinkedList<User> users = languageAPI.getUsersBy(language);
 
@@ -92,5 +92,6 @@ Now to get all messages of a given language:
 ***
 
 ##For request and support send a mail
+
 [maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
  
