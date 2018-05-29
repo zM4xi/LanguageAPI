@@ -57,6 +57,7 @@ Now to get all messages of a given language:
  
  The output would be:
  > simple test message to display
+ 
  > yet another simple display text
  
  ***
@@ -90,5 +91,6 @@ Now to get all messages of a given language:
  
 ***
 
-##For request and support write and mail to [maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
+##For request and support send a mail
+[maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
  
