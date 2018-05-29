@@ -91,7 +91,5 @@ Now to get all messages of a given language:
  
 ***
 
-##For request and support send a mail
-
-[maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
+## For request and support send a mail to [maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
  
