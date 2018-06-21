@@ -88,7 +88,27 @@ Now to get all messages of a given language:
  
  This will output:
  > There are `X` users using the language English
- 
+
+Maven Repository:
+
+```xml
+    <repositories>
+        <repository>
+            <id>currencyapi-repo</id>
+            <url>http://repo.zm4xi.de</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.zm4xi.languageapi</groupId>
+            <artifactId>LanguageAPI</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+```
+
+
 ***
 
 ## For request and support send a mail to [maxi@zm4xi.de](mailto:maxi@zm4xi.de "Opens your mail programm")
