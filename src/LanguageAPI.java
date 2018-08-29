@@ -55,14 +55,14 @@ public class LanguageAPI {
         databaseFile = new DatabaseFile();
         configFile = new ConfigFile();
         defaultLanguage = configFile.getString("default_language");
-        mySQL = new MySQL(databaseFile.getString("host"), databaseFile.getString("port"), databaseFile.getString("database"), databaseFile.getString("username"), databaseFile.getString("password"));
+        mySQL = new MySQL(databaseFile.getString("host"), databaseFile.getString("port"), databaseFile.getString("test.database"), databaseFile.getString("username"), databaseFile.getString("password"));
 
         languageManager = new LanguageManager();
         userManager = new UserManager(defaultLanguage);
     }
 
     /**
-     * Remove a message from the database identified by a {@link String}
+     * Remove a message from the test.database identified by a {@link String}
      *
      * @param identifier a {@link String} as identifier
      * @param language a {@link Language} as categorization
@@ -71,37 +71,37 @@ public class LanguageAPI {
      * @version a 0.0.1
      */
     public void eraseMessage(Language language, String identifier) {
-        language.getMessageManager().getByIdentifier(identifier).delete();
+        language.getMessageManager().getByIdentifier(identifier).delete(language);
         language.getMessageManager().dropMessage(identifier);
     }
 
     /**
-     * Save a new message in the database identified by a {@link String}
+     * Save a new message in the test.database identified by a {@link String}
      * and its {@link Language}
      *
      * @param identifier a {@link String} as identifier
-     * @param message a {@link String} to be saved in the database
+     * @param message a {@link String} to be saved in the test.database
      * @param language a {@link Language} as categorization
      *
      * @author zM4xi
      * @version a 0.0.1
      */
     public void newMessage(String identifier, String message, Language language) {
-        language.getMessageManager().addMessage(identifier, message, language);
+        language.getMessageManager().addMessage(identifier, message);
     }
 
     /**
-     * Set a message in the database identified by a {@link String}
+     * Set a message in the test.database identified by a {@link String}
      *
      * @param language a {@link Language} as categorization
      * @param identifier a {@link String} as identifier
-     * @param message a {@link String} to be set in the database
+     * @param message a {@link String} to be set in the test.database
      *
      * @author zM4xi
      * @version a 0.0.1
      */
     public void setMessage(Language language, String identifier, String message) {
-        language.getMessageManager().getByIdentifier(identifier).setMessage(message);
+        language.getMessageManager().getByIdentifier(identifier).setMessage(language, message);
     }
 
     /**
@@ -115,7 +115,7 @@ public class LanguageAPI {
      * @version a 0.0.1
      */
     public Message getMessage(Language language, String identifier) {
-        return language.getMessageManager().getByIdentifier(identifier, language);
+        return language.getMessageManager().getByIdentifier(identifier);
     }
 
     /**
@@ -130,7 +130,7 @@ public class LanguageAPI {
      */
     public Message getMessage(UUID uuid, String identifier) {
         Language language = getUserManager().getByUUID(uuid).getLanguage();
-        return language.getMessageManager().getByIdentifier(identifier, language);
+        return language.getMessageManager().getByIdentifier(identifier);
     }
 
 
@@ -146,7 +146,7 @@ public class LanguageAPI {
      * @version a 0.0.1
      */
     public String getMessageString(Language language, String identifier) {
-        return language.getMessageManager().getByIdentifier(identifier, language).getMessage();
+        return language.getMessageManager().getByIdentifier(identifier).getMessage();
     }
 
     /**
@@ -215,10 +215,7 @@ public class LanguageAPI {
         LinkedHashMap<Language, List<Message>> map = new LinkedHashMap<>();
         for(Language lang : languages) {
             LinkedList<Message> list = new LinkedList<>();
-            for(Message msg : lang.getMessageManager().getMessages()) {
-                if(msg.getLanguage().equals(lang)) list.add(msg);
-            }
-            map.put(lang, list);
+            map.put(lang, lang.getMessageManager().getMessages());
         }
         return map;
     }
