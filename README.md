@@ -94,7 +94,7 @@ Maven Repository:
 ```xml
     <repositories>
         <repository>
-            <id>currencyapi-repo</id>
+            <id>languageapi-repo</id>
             <url>http://repo.zm4xi.de</url>
         </repository>
     </repositories>
